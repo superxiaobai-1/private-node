@@ -11,7 +11,6 @@
 #include "mem_model.h"
 #include "net_model.h"
 
-#include "monitor_info.grpc.pb.h"
 #include "monitor_info.pb.h"
 
 

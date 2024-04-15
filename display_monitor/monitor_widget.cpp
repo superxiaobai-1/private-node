@@ -1,10 +1,10 @@
 #include "monitor_widget.h"
-
+#include <glog/logging.h>
 namespace monitor {
 
 MonitorWidget::MonitorWidget(QWidget *parent) {}
 
-QWidget *MonitorWidget::ShowAllMonitorWidget(const std::string& name) {
+QWidget *MonitorWidget::ShowAllMonitorWidget(const std::string &name) {
   QWidget *widget = new QWidget();
   stack_menu_ = new QStackedLayout();
   stack_menu_->addWidget(InitCpuMonitorWidget());
@@ -19,12 +19,16 @@ QWidget *MonitorWidget::ShowAllMonitorWidget(const std::string& name) {
   return widget;
 }
 
-QWidget *MonitorWidget::InitButtonMenu(const std::string& name) {
+QWidget *MonitorWidget::InitButtonMenu(const std::string &name) {
   // char *name = getenv("USER");
-  QPushButton *cpu_button = new QPushButton(QString::fromStdString(name) + "_cpu", this);
-  QPushButton *soft_irq_button = new QPushButton(QString::fromStdString(name) + "_soft_irq", this);
-  QPushButton *mem_button = new QPushButton(QString::fromStdString(name) + "_mem", this);
-  QPushButton *net_button = new QPushButton(QString::fromStdString(name) + "_net", this);
+  QPushButton *cpu_button =
+      new QPushButton(QString::fromStdString(name) + "_cpu", this);
+  QPushButton *soft_irq_button =
+      new QPushButton(QString::fromStdString(name) + "_soft_irq", this);
+  QPushButton *mem_button =
+      new QPushButton(QString::fromStdString(name) + "_mem", this);
+  QPushButton *net_button =
+      new QPushButton(QString::fromStdString(name) + "_net", this);
   QFont *font = new QFont("Microsoft YaHei", 15, 40);
   cpu_button->setFont(*font);
   soft_irq_button->setFont(*font);

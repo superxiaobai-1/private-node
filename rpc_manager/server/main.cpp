@@ -8,7 +8,7 @@ void InitServer() {
   grpc::ServerBuilder builder;
   builder.AddListeningPort(kServerPortInfo, grpc::InsecureServerCredentials());
 
-  monitor::GrpcManagerImpl grpc_server;
+  monitor::RpcManagerImpl grpc_server;
   builder.RegisterService(&grpc_server);
 
   std::unique_ptr<grpc::Server> server(builder.BuildAndStart());

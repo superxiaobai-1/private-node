@@ -2,7 +2,7 @@
 
 #include "utils/read_file.h"
 #include "utils/utils.h"
-#include "monitor_info.grpc.pb.h"
+
 #include "monitor_info.pb.h"
 
 namespace monitor {

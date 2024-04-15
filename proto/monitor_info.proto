@@ -1,6 +1,6 @@
 syntax = "proto3";
 package monitor.proto;
-
+option cc_generic_services = true;
 import "google/protobuf/empty.proto";
 import "net_info.proto";
 import "mem_info.proto";

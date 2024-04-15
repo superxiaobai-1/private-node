@@ -66,6 +66,7 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "*.inc": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "cassert": "cpp"
     }
 }

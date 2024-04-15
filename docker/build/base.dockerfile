@@ -61,7 +61,7 @@ RUN /tmp/install/grpc/install_grpc.sh
 # RUN /tmp/install/qt/install_qt.sh
 
 
-
+RUN apt-get install -y  libgoogle-glog-dev gdb 
 
 
 

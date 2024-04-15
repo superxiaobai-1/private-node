@@ -7,5 +7,7 @@
 # Sources
 #
 
-add_subdirectory(server)
-add_subdirectory(client)
+# add_subdirectory(server)
+add_subdirectory(rpc_server)
+add_subdirectory(rpc_client)
+# add_subdirectory(client)

@@ -65,6 +65,7 @@ void MonitorBaseModel::UpdateMonitorInfo(
 
 std::vector<QVariant> MonitorBaseModel::insert_one_soft_irq(
     const monitor::proto::SoftIrq& soft_irq) {
+      
   std::vector<QVariant> soft_irq_list;
   for (int i = SoftIrqInfo::CPU_NAME; i < COLUMN_MAX; i++) {
     switch (i) {

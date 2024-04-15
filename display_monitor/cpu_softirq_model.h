@@ -4,7 +4,6 @@
 #include <vector>
 #include "monitor_inter.h"
 
-#include "monitor_info.grpc.pb.h"
 #include "monitor_info.pb.h"
 
 namespace monitor {
