@@ -9,16 +9,18 @@ int main(int argc, char* argv[]) {
   monitor::proto::MonitorInfo monitor_info;
   monitor::RpcClient* rpc_client = nullptr;
   std::unique_ptr<std::thread> thread_;
+
+  // listen
   thread_ = std::make_unique<std::thread>([&]() {
     EventLoop loop;
-    rpc_client = new monitor::RpcClient(&loop, "172.25.9.117");
+    rpc_client = new monitor::RpcClient(&loop, "localhost");
     loop.loop();
   });
 
   monitor::MonitorWidget monitor_widget;
   QWidget* widget = monitor_widget.ShowAllMonitorWidget("test");
-  widget->show();
 
+  // update
   std::thread data_update_thread([&]() {
     while (true) {
       if (rpc_client) {
@@ -29,6 +31,12 @@ int main(int argc, char* argv[]) {
       }
     }
   });
+
+  if (rpc_client) {
+    rpc_client->GetMonitorInfo(&monitor_info);
+  }
+
+  widget->show();
 
   thread_->detach();
   data_update_thread.detach();
