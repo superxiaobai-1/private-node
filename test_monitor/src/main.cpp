@@ -26,7 +26,7 @@ int main() {
   std::unique_ptr<std::thread> thread_ = nullptr;
 
   EventLoop loop;
-  monitor::RpcClient rpc_client_(&loop, "172.25.9.117");
+  monitor::RpcClient rpc_client_(&loop, "localhost");
   monitor::proto::MonitorInfo monitor_info;
   monitor_info.set_name(std::string(name));
 
